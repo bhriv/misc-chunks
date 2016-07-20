@@ -1,0 +1,185 @@
+
+/* Typography
+  ----------------------- */
+
+/* Golden Ratio Scale for 16px Font: Optimized Typography for 16px Font in 580px-wide Setting
+* Title: 42px
+* Headlines: 26px
+* Sub-headlines: 20px
+* Primary Text: 16px
+* Secondary Text: 13px
+*/
+
+
+/* Font Core
+  ----------------------- */
+
+// embedded fonts...
+
+@include font-face(font_awesome, '../fonts/font_awesome')
+@include font-face(pt_light, '../fonts/pt_light')
+@include font-face(pt_bold, '../fonts/pt_bold')
+@include font-face(din_light, '../fonts/din_light')
+@include font-face(proximanova_bold, '../fonts/proximanova_bold')
+
+// stacks...
+$font-awesome:            "font_awesome"
+$helvetica-stack:         "Helvetica Neue", "Helvetica", Arial, sans-serif
+$custom-font:             "din_light", "Helvetica Neue", "Helvetica", Arial, sans-serif
+$custom-font-bold:        "proximanova_bold","Helvetica Neue", "Helvetica", Arial, sans-serif
+$custom-font-alt:         "pt_light", "Helvetica Neue", "Helvetica", Arial, sans-serif
+$custom-font-bold-alt:    "pt_bold","Helvetica Neue", "Helvetica", Arial, sans-serif
+
+// base definitions...
+$base-font-family:    $helvetica-stack   !default
+$base-font-size:      100%              !default
+$base-line-height:    $scale3           !default
+$font-small:          80%               
+$font-smaller:        50%   
+$color-header:        $black
+
+// font family...
+$font-family-header:  $custom-font-bold !default
+$font-family-nav:     $custom-font      !default
+$font-family-button:  $custom-font      !default
+
+// links
+$link-normal: $brand
+$link-hover: $black 
+$link-active: $brand
+$link-visited: $brand 
+$link-focus: $brand
+
+
+/* Paragraphs
+  ----------------------- */
+body,
+p, 
+blockquote
+  margin-bottom: $scale1
+  font-family: $base-font-family
+  font-size: $scale1
+  line-height: $base-line-height
+  color: $black
+
+small, p small
+  font-size: 80%
+  line-height: $base-line-height*0.5
+
+
+/* Links
+  ----------------------- */
+
+a
+  font-family: $base-font-family
+  +link-colors($link-normal, $link-hover, $link-active, $link-visited, $link-focus)
+  text-decoration: none
+  &:hover
+    text-decoration: none
+    cursor: pointer
+a.cta
+  @include sassy-purple
+  padding: $scale-2 $scale-3
+
+
+/* Headers
+  ----------------------- */
+
+h1, h2, h3, h4, h5
+  font-family: $custom-font
+  color: $color-header
+  font-weight: 300
+  font-smoothing: antialiased
+  -moz-font-smoothing: none
+  -webkit-font-smoothing: antialiased
+  -webkit-text-stroke: 0
+  letter-spacing: -0.04em
+
+h1, .h1
+  margin-bottom: $scale-4
+  font-family: $font-family-header
+  font-size: $scale5
+  color: $black
+  line-height: 1.5em
+  &.tax_title
+    em 
+      color: $brand
+  @include media(max-width $smartphone)
+    font-size: $scale3
+    
+h2, .h2
+  font-family: $custom-font-bold
+  font-size: $scale3
+  color: $color-header
+  font-weight: 600
+  letter-spacing: -0.04em
+  @include media(max-width $tablet_v)
+    font-size: 24px
+
+h3, .h3
+  font-size: $scale3
+  font-family: $custom-font
+  color: $color-header
+  letter-spacing: -0.05em
+  @include media(max-width $tablet_v)
+    font-size: 18px
+
+h4, .h4
+  font-size: $scale1
+  text-transform: uppercase
+  @include media(max-width $tablet_v)
+    font-size: 16px
+
+h5, .h5 
+  font-family: $custom-font-bold
+  @include media(max-width $tablet_v)
+    font-size: 16px
+
+h6, .h6
+  font-size: $scale-1
+  font-family: $custom-font
+  letter-spacing: $scale-4
+  @include media(max-width $tablet_v)
+    font-size: 12px
+
+big, .big
+  font-size: $scale3
+
+h1.jumbo
+  // margin-bottom: $scale-2
+  font-size: $scale7
+  font-family: $custom-font-bold
+  line-height: $scale-1
+  // letter-spacing: -5.574px
+
+
+/* Lists
+  ----------------------- */
+
+ul,
+ol
+  margin: $scale1 0 $scale3 $scale1
+
+ul li,
+ol li
+  margin-bottom: 0
+  font-family: $base-font-family
+  font-size: $scale1
+  line-height: $base-line-height
+  color: $black
+
+header#utility,
+footer#page_footer
+  a 
+    font-family: $custom-font-bold
+    font-size: $scale-1
+
+.expander 
+  margin-bottom: 1em
+  a 
+    font-family: $custom-font-bold
+article 
+  ul 
+    margin-left: 0
+
+
